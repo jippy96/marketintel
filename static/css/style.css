@@ -1,3 +1,21 @@
-.present{
-    background-color: greenyellow;
+.custom{
+    background-color: rgba(25, 175, 142, 0.795);
+    margin-top: -120px;
+    height: 750px;
+}
+
+h1.titre{
+    margin-top: 150px;
+    color: white;
+    font-size: 56px;
+    font-weight: bolder;
+}
+
+h2.titre{
+    color: white;
+}
+
+.fluid{
+
+    background-color: gainsboro;
 }
