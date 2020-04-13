@@ -1,93 +1,208 @@
 {% extends "commun/base.html" %}
+
 {% load static %}
 
 {% block stylesheets %}
 
-	<link rel="stylesheet" href="{% static "css/style.css" %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/circular.css' %}">
 {% endblock %}
 {% block body %}
 	<div class="container-fluid">
 		{% include "commun/header.html" %}
+	</div>
 
-		<div class="row present mt-5 mb-5">
-			<div class="col-12">
-				<h1 class="text-center">Lorem Ipsum</h1>
+	<div class="custom">
+
+		<div class="container">
+			<div class="row  mb-5">
+				<div class="col-12">
+					<h1 class="text-center titre">Lorem Ipsum</h1>
+				</div>
 			</div>
-		</div>
 
-		<div class="row mb-4">
-			<div class="col-12">
-				<h2 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea porro, repellendus culpa doloribus natus magni, ad cupiditate fugit dicta nisi sequi id, fugiat dolor! Voluptatibus, libero sed! Necessitatibus, minus!</h2>
+			<div class="row mb-4">
+				<div class="col-12">
+					<h2 class="text-center titre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea porro, repellendus culpa doloribus natus magni, ad cupiditate fugit dicta nisi sequi id, fugiat dolor! Voluptatibus, libero sed! Necessitatibus, minus!</h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div
+					class="col-3">
+					<!-- Card -->
+					<div
+						class="card">
+						<!-- Card content -->
+						<div
+							class="card-body">
+
+							<!-- Title -->
+							<h4 class="card-title text-center">TBS 2018</h4>
+							<!-- Text -->
+							<div class="progress-circle p60">
+
+								<span>90%</span>
+
+								<div class="left-half-clipper">
+
+									<div class="first100-bar"></div>
+
+									<div class="value-bar">60</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+					<!-- Card -->
+				</div>
+				<div
+					class="col-3">
+					<!-- Card -->
+					<div
+						class="card">
+						<!-- Card content -->
+						<div
+							class="card-body">
+
+							<!-- Title -->
+							<h4 class="card-title">Card title</h4>
+							<!-- Text -->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+																																																																																						      content.</p>
+						</div>
+
+					</div>
+					<!-- Card -->
+				</div>
+				<div
+					class="col-3">
+					<!-- Card -->
+					<div
+						class="card">
+						<!-- Card content -->
+						<div
+							class="card-body">
+
+							<!-- Title -->
+							<h4 class="card-title">Card title</h4>
+							<!-- Text -->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+																																																																																						      content.</p>
+						</div>
+
+					</div>
+					<!-- Card -->
+				</div>
+				<div
+					class="col-3">
+					<!-- Card -->
+					<div
+						class="card">
+						<!-- Card content -->
+						<div
+							class="card-body">
+
+							<!-- Title -->
+							<h4 class="card-title">Card title</h4>
+							<!-- Text -->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+																																																																																						      content.</p>
+						</div>
+
+					</div>
+					<!-- Card -->
+				</div>
 			</div>
 		</div>
 	</div>
+
 	<div class="container">
-		<div class="row">
-			<div class="col-3">
-				<!-- Card -->
-				<div class="card">					
-					<!-- Card content -->
-					<div class="card-body">
-
-						<!-- Title -->
-						<h4 class="card-title">Card title</h4>
-						<!-- Text -->
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-							      content.</p>
-					</div>
-
-				</div>
-				<!-- Card -->
+		<div class="row mt-4">
+			<div class="col-4">
+				<h2 class="text-center">Investissement de l'Etat</h2>
 			</div>
-			<div class="col-3">
-            <!-- Card -->
-				<div class="card">					
-					<!-- Card content -->
-					<div class="card-body">
-
-						<!-- Title -->
-						<h4 class="card-title">Card title</h4>
-						<!-- Text -->
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-							      content.</p>
-					</div>
-
-				</div>
-				<!-- Card -->
-            </div>
-			<div class="col-3">
-                <!-- Card -->
-				<div class="card">					
-					<!-- Card content -->
-					<div class="card-body">
-
-						<!-- Title -->
-						<h4 class="card-title">Card title</h4>
-						<!-- Text -->
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-							      content.</p>
-					</div>
-
-				</div>
-				<!-- Card -->
-            </div>
-			<div class="col-3">
-                <!-- Card -->
-				<div class="card">					
-					<!-- Card content -->
-					<div class="card-body">
-
-						<!-- Title -->
-						<h4 class="card-title">Card title</h4>
-						<!-- Text -->
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-							      content.</p>
-					</div>
-
-				</div>
-				<!-- Card -->
-            </div>
+			<div class="col-4">
+				<h2 class="text-center">Cout Moyen de formation</h2>
+			</div>
+			<div class="col-4">
+				<h2 class="text-center">Evaluation des dépenses</h2>
+			</div>
 		</div>
 	</div>
 
+	<div class="container-fluid fluid">
+		<div class="row pt-5 mb-5">
+			<div class="col-4">
+				<div class="card">
+					<div class="card-header" style="background-color: rgba(25, 175, 142, 0.795);">
+						Education
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Cras justo odio</li>
+						<li class="list-group-item">Dapibus ac facilisis in</li>
+						<li class="list-group-item">Vestibulum at eros</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col 8">
+				<div class="row">
+					<div class="col-4">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title text-center">Effectif Total Apprenants</h6>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title text-center">Effectif Etude Supérieure</h6>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title text-center">Effectif Secondaire</h6>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title text-center">Effectif Total Apprenants</h6>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title text-center">Effectif Etude Supérieure</h6>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title text-center">Effectif Secondaire</h6>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 {% endblock %}
