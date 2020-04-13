@@ -1,0 +1,35 @@
+{% extends "modele.html" %}
+
+{% block content %}
+  <div id="container" style="width: 75%;">
+    <canvas id="pie-chart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+          backgroundColor: [
+            '#ffcd56', '#ff6384', '#36a2eb', '#C0C0C0', '#D3D3D3', '#83DE1F','#6E9A3E','#2BE2C8','#DF6F7F','#950D20','#8E5BD2','#D25BCC','#945F91','#0CAB15','#BEC3BF','#E3EF26'
+          ],
+          label: 'total'
+        }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+
+  </script>
+
+{% endblock %}

@@ -1,0 +1,165 @@
+{% extends 'commun/base.html' %}
+
+{% load static %}
+
+{% block stylesheets %}
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/circular.css' %}">
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		{% include "commun/header.html" %}
+	</div>
+
+	<div class="custom">
+
+		<div class="container">
+			<div class="row  mb-5">
+				<div class="col-12">
+					<h1 class="text-center titre">Lorem Ipsum</h1>
+				</div>
+			</div>
+
+			<div class="row mb-4">
+				<div class="col-12">
+					<h2 class="text-center titre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea porro, repellendus culpa doloribus natus magni, ad cupiditate fugit dicta nisi sequi id, fugiat dolor! Voluptatibus, libero sed! Necessitatibus, minus!</h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div
+					class="col-3">
+					<!-- Card -->
+					<div
+						class="card">
+						<!-- Card content -->
+						<div
+							class="card-body">
+
+							<!-- Title -->
+							<h4 class="card-title text-center">TBS 2018</h4>
+							<!-- Text -->
+							<div class="progress-circle p60">
+
+								<span>90%</span>
+
+								<div class="left-half-clipper">
+
+									<div class="first100-bar"></div>
+
+									<div class="value-bar">60</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+					<!-- Card -->
+				</div>
+				<div
+					class="col-3">
+					<!-- Card -->
+					<div
+						class="card">
+						<!-- Card content -->
+						<div
+							class="card-body">
+
+							<!-- Title -->
+							<h4 class="card-title">Card title</h4>
+							<!-- Text -->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+																																																																																						      content.</p>
+						</div>
+
+					</div>
+					<!-- Card -->
+				</div>
+				<div
+					class="col-3">
+					<!-- Card -->
+					<div
+						class="card">
+						<!-- Card content -->
+						<div
+							class="card-body">
+
+							<!-- Title -->
+							<h4 class="card-title">Card title</h4>
+							<!-- Text -->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+																																																																																						      content.</p>
+						</div>
+
+					</div>
+					<!-- Card -->
+				</div>
+				<div
+					class="col-3">
+					<!-- Card -->
+					<div
+						class="card">
+						<!-- Card content -->
+						<div
+							class="card-body">
+
+							<!-- Title -->
+							<h4 class="card-title">Card title</h4>
+							<!-- Text -->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+																																																																																						      content.</p>
+						</div>
+
+					</div>
+					<!-- Card -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row mt-4">
+			<div class="col-4">
+				<h2 class="text-center">Investissement de l'Etat</h2>
+			</div>
+			<div class="col-4">
+				<h2 class="text-center">Cout Moyen de formation</h2>
+			</div>
+			<div class="col-4">
+				<h2 class="text-center">Evaluation des dépenses</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-12">
+		<hr>
+			<h2 class="intro-text text-center">{{ list_title }}</h2>
+    	<hr class="detail-separator">
+	</div>
+
+	<div class="container-fluid fluid">
+		<div class="row pt-5 mb-5">
+			<div class="col-4">
+				<div class="card">
+					<div class="card-header" style="background-color: rgba(25, 175, 142, 0.795);">
+						Education
+					</div>
+					<ul class="list-group list-group-flush">
+						<a href="{% url 'pie-chart' %}"><li class="list-group-item">Taux brut de scolarisation et indice de parité à l’Elémentaire, en 2018</li></a>
+						<a href="{% url 'pie-chart' %}"><li class="list-group-item">Population scolarisable au moyen selon la région et le sexe  et part de chaque région dans cette population en 2018</li></a>
+						<a href="{% url 'pie-chart' %}"><li class="list-group-item">Répartition du TBS du moyen général par région et selon le sexe en 2018</li></a>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-8">
+				{% block content %}{% endblock %}
+			</div>
+		</div> 
+	</div>
+</div>
+{% endblock %}
