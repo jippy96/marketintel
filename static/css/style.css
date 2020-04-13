@@ -19,3 +19,16 @@ h2.titre{
 
     background-color: gainsboro;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .custom{
+        background-color: rgba(25, 175, 142, 0.795);
+        margin-top: -120px;
+        height: 1220px;
+    }
+
+    .effectif{
+        margin-top: 20px;
+    }
+  }
