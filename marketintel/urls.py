@@ -22,6 +22,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('modele/', include('modele.urls')),
     path('', views.home)
 ]
 
