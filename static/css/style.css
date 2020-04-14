@@ -20,6 +20,56 @@ h2.titre{
     background-color: gainsboro;
 }
 
+.sidenav{
+    color: black;
+    font-size: 22px;
+}
+
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.color{
+  background-color: #e6e3e38e;
+
+}
+
+.notColor{
+  background-color: #ffffff;
+
+}
+
+.chevron{
+  margin-left: 375px;
+}
+
+.list:hover{
+  font-size: 16px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: rgba(204, 204, 204, 0.493);
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .custom{

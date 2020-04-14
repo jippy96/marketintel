@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/circular.css' %}">
+	<link rel="stylesheet" href="{% static 'chart/Chart.css' %}">
 {% endblock %}
 {% block body %}
 	<div class="container-fluid">
@@ -36,19 +37,19 @@
 						<div
 							class="card-body">
 							<!-- <div class="row mt-4 mb-4">
-																																<div class="col-lg-4 col-md-4 col-sm-12">
-																																	<h6 class="text-center">Investissement de l'Etat</h6>
-																																	<h2 class="text-center">1 000 000 000</h2>
-																																</div>
-																																<div class="col-lg-4 col-md-4 col-sm-12">
-																																	<h6 class="text-center">Cout Moyen de formation</h6>
-																																	<h2 class="text-center">650 000</h2>
-																																</div>
-																																<div class="col-lg-4 col-md-4 col-sm-12">
-																																	<h6 class="text-center">Evaluation des dépenses</h6>
-																																	<h2 class="text-center">25 000 000 000</h2>
-																																</div>
-																															</div> -->
+																																																																										<div class="col-lg-4 col-md-4 col-sm-12">
+																																																																											<h6 class="text-center">Investissement de l'Etat</h6>
+																																																																											<h2 class="text-center">1 000 000 000</h2>
+																																																																										</div>
+																																																																										<div class="col-lg-4 col-md-4 col-sm-12">
+																																																																											<h6 class="text-center">Cout Moyen de formation</h6>
+																																																																											<h2 class="text-center">650 000</h2>
+																																																																										</div>
+																																																																										<div class="col-lg-4 col-md-4 col-sm-12">
+																																																																											<h6 class="text-center">Evaluation des dépenses</h6>
+																																																																											<h2 class="text-center">25 000 000 000</h2>
+																																																																										</div>
+																																																																									</div> -->
 							<h4 class="card-title">Card title</h4>
 
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's</p>
@@ -70,7 +71,7 @@
 							<h4 class="card-title">Card title</h4>
 							<!-- Text -->
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																														      content.</p>
+																																																																																																																																																																																														      content.</p>
 						</div>
 
 					</div>
@@ -89,7 +90,7 @@
 							<h4 class="card-title">Card title</h4>
 							<!-- Text -->
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																														      content.</p>
+																																																																																																																																																																																														      content.</p>
 						</div>
 
 					</div>
@@ -108,7 +109,7 @@
 							<h4 class="card-title">Card title</h4>
 							<!-- Text -->
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																														      content.</p>
+																																																																																																																																																																																														      content.</p>
 						</div>
 
 					</div>
@@ -140,14 +141,51 @@
 		<div class="row pt-5 mb-4">
 			<div class="col-lg-4 col-md-4 col-sm-12">
 				<div class="card">
-					<div class="card-header" style="background-color: rgba(25, 175, 142, 0.795);">
-						Education
+					<a type="button" class="collapsible sidenav color">Education
+						<i class="fa fa-plus" style="margin-left: 350px;"></i>
+					</a>
+
+					<div class="content">
+						<ul class="list-group list-group-flush">
+							<a type="button" class="list"><li class="list-group-item">Garderie</li></a>
+							<a type="button" class="list"><li class="list-group-item">Préscolaire</li></a>
+							<a type="button" class="list"><li class="list-group-item">Primaire</li></a>
+							<a type="button" class="list"><li class="list-group-item">Moyen</li></a>
+							<a type="button" class="list"><li class="list-group-item">Secondaire</li></a>
+							<a type="button" class="list"><li class="list-group-item">Elémentaire</li></a>
+						</ul>
 					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Cras justo odio</li>
-						<li class="list-group-item">Dapibus ac facilisis in</li>
-						<li class="list-group-item">Vestibulum at eros</li>
-					</ul>
+					<a type="button" class="collapsible sidenav notColor">Santé
+						<i class="fa fa-plus chevron"></i>
+					</a>
+					<div class="content">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Cras justo odio</li>
+							<li class="list-group-item">Dapibus ac facilisis in</li>
+							<li class="list-group-item">Vestibulum at eros</li>
+						</ul>
+					</div>
+					<a type="button" class="collapsible sidenav color">Transport
+						<i class="fa fa-plus " style="margin-left: 350px;"></i>
+					</a>
+					<div class="content">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Cras justo odio</li>
+							<li class="list-group-item">Dapibus ac facilisis in</li>
+							<li class="list-group-item">Vestibulum at eros</li>
+						</ul>
+					</div>
+					<a type="button" class="collapsible sidenav notColor">Agriculture
+						<i class="fa fa-plus " style="margin-left: 340px;"></i>
+					</a>
+					<div class="content">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Cras justo odio</li>
+							<li class="list-group-item">Dapibus ac facilisis in</li>
+							<li class="list-group-item">Vestibulum at eros</li>
+						</ul>
+					</div>
+
 				</div>
 			</div>
 			<div class="col 8">
@@ -214,7 +252,6 @@
 						<div class="card" style="height: 400px;">
 							<div class="card-body">
 								<h6 class="card-title text-start">TAUX DE CHOMAGE</h6>
-
 							</div>
 						</div>
 					</div>
@@ -231,6 +268,8 @@
 						<div class="card" style="height: 400px;">
 							<div class="card-body">
 								<h6 class="card-title text-start">TAUX DE CHOMAGE</h6>
+								<canvas id="myChart"></canvas>
+
 							</div>
 						</div>
 					</div>
@@ -247,6 +286,30 @@
 	</div>
 
 	<div class="container-fluid">
-        {% include "commun/footer.html" %}
-    </div>
+		{% include "commun/footer.html" %}
+	</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{% static 'chart/Chart.js' %}"></script>
+	<script src="{% static 'js/own/chart.js' %}"></script>
+
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function () {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+if (content.style.display === "block") {
+content.style.display = "none";
+} else {
+content.style.display = "block";
+}
+});
+}
+	</script>
 {% endblock %}
