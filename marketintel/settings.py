@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'education.apps.EducationConfig',
     'modele.apps.ModeleConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'marketintel.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'marketintel',
+        'USER': 'postgres',
+        'PASSWORD': 'badou',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
