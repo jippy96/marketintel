@@ -20,11 +20,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # my Own import below
 from . import views
 
+app_name = 'education'
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('modele/', include('modele.urls')),
-    path('education/', include('education.urls')),
-    path('', views.home, name="home_index")
+    path('admin/', admin.site.urls),    
+    path('', views.index, name="education_index"),
+    path('garderie', views.garderie, name="education_garderie"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
