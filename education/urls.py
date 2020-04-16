@@ -14,6 +14,7 @@ app_name = 'education'
 urlpatterns = [
     path('admin/', admin.site.urls),    
     path('', views.index, name="education_index"),
+    
     path('garderie', views.garderie, name="education_garderie"),
 ]
 
