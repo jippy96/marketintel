@@ -1,6 +1,4 @@
-L'idee que j'ai, c'est de creer une vue pour chaque chart. Maintenant chaque vue renvoi 
-vers une template qui se nomme chart.html
-
-Dans chart.html, on va ecrire les blocks pie_chart, bar_chart etc.
-
-Ces blocks serons des blocks deja creer dans la page d'acceuil c'est a dire que au lieu de mettre les graphiques de maniere static, tu va juste mettre des blocks(pie_chart, bar_chart, ...). Ces blocks seront remplis par chart.html en fonction de la vue qui l'appelera.
+'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }

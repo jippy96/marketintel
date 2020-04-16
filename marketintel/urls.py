@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('modele/', include('modele.urls')),
     path('education/', include('education.urls')),
-    path('', views.home)
+    path('', views.home, name="home_index")
 ]
 
 urlpatterns += staticfiles_urlpatterns()
