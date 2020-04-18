@@ -29,6 +29,16 @@ h2.titre{
     font-size: 22px;
 }
 
+.list{
+  color: black;
+  margin-left: 20px;
+  border-bottom: thin;
+}
+.list:hover{
+  color: black;
+  border-bottom: 1mm ridge rgba(62, 243, 138, 0.6);
+}
+
 
 
 
