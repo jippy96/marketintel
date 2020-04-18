@@ -11,4 +11,13 @@ Dans chart.html, on va ecrire les blocks pie_chart, bar_chart etc.
 
 Ces blocks serons des blocks deja creer dans la page d'acceuil c'est a dire que au lieu de mettre les graphiques de maniere static, tu va juste mettre des blocks(pie_chart, bar_chart, ...). Ces blocks seront remplis par chart.html en fonction de la vue qui l'appelera.
 
+###############################################Jippy
+
+Ce que tu dis on pourrait le faire si pour chaque niveau de l'education(elementaire, prescolaire) on a les memes types de reprensetation, par exemple :
+
+Le taux brut scolaire, le taux de succes, etc...
+
+Je te suggere de changer les noms des classes dans le fichier models de education les noms des tables doivent etre les noms des representations par ex (Taux brut scolaire) 
+maintenant tu peux faire une jointure de cette table a travers une colonne sur le niveau concerné dans l'education.
+
 
