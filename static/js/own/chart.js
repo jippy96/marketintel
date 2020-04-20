@@ -131,6 +131,112 @@ window.onload = function () {
     };
 
     $("#chartContainer4").CanvasJSChart(options4);
+
+
+    //Taux brut d'admission
+    var options = {
+        animationEnabled: true,
+        title: {
+            text: "Coal Reserves of Countries"
+        },
+        axisY: {
+            title: "Coal (mn tonnes)"
+        },
+        toolTip: {
+            shared: true,
+            reversed: true
+        },
+        data: [{
+            type: "stackedColumn",
+            name: "Anthracite and Bituminous",
+            showInLegend: "true",
+            yValueFormatString: "#,##0mn tonnes",
+            dataPoints: [
+                { y: 111338, label: "USA" },
+                { y: 49088, label: "Russia" },
+                { y: 62200, label: "China" },
+                { y: 90085, label: "India" },
+                { y: 38600, label: "Australia" },
+                { y: 48750, label: "SA" }
+            ]
+        },
+        {
+            type: "stackedColumn",
+            name: "SubBituminous and Lignite",
+            showInLegend: "true",
+            yValueFormatString: "#,##0mn tonnes",
+            dataPoints: [
+                { y: 135305, label: "USA" },
+                { y: 107922, label: "Russia" },
+                { y: 52300, label: "China" },
+                { y: 3360, label: "India" },
+                { y: 39900, label: "Australia" },
+                { y: 0, label: "SA" }
+            ]
+        }]
+    };
+
+    $("#chartContainer").CanvasJSChart(options);
 }
+
+// test chart js
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Dakar', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '% Garçon',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(25, 175, 142, 0.595)',
+                // 'rgba(54, 162, 235, 0.2)',
+                // 'rgba(255, 206, 86, 0.2)',
+                // 'rgba(75, 192, 192, 0.2)',
+                // 'rgba(153, 102, 255, 0.2)',
+                // 'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(25, 175, 142, 0.795)',
+                // 'rgba(54, 162, 235, 1)',
+                // 'rgba(255, 206, 86, 1)',
+                // 'rgba(75, 192, 192, 1)',
+                // 'rgba(153, 102, 255, 1)',
+                // 'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        },{
+            label: '% Fille',
+            data: [10, 15, 7, 8, 10, 32],
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.5)',
+            // 'rgba(54, 162, 235, 0.2)',
+            // 'rgba(255, 206, 86, 0.2)',
+            // 'rgba(75, 192, 192, 0.2)',
+            // 'rgba(153, 102, 255, 0.2)',
+            // 'rgba(255, 159, 64, 0.2)'
+        ],
+            borderColor: [
+            'rgba(255, 99, 132, 1)',
+            // 'rgba(54, 162, 235, 1)',
+            // 'rgba(255, 206, 86, 1)',
+            // 'rgba(75, 192, 192, 1)',
+            // 'rgba(153, 102, 255, 1)',
+            // 'rgba(255, 159, 64, 1)'
+        ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
 
 
