@@ -16,6 +16,7 @@ urlpatterns = [
     path('', views.index, name="education_index"),
     
     path('garderie', views.garderie, name="education_garderie"),
+    path('prescolaire', views.prescolaire, name="education_prescolaire"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
