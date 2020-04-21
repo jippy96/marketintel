@@ -179,78 +179,104 @@ for (i = 0; i < coll.length; i++) {
 //     $("#chartContainer").CanvasJSChart(options);
 // }
 
+// controle pour recupérer la valeur du select pour le type de niveau préscolaire
+$('#niveau').change(function (e) {
+    e.preventDefault();
+    var niveau_selected = $(this).val();
 
-// requetes Ajax /education/prescolaire
-var label_regions = [];
-var percent_garcon = [];
-var percent_fille = [];
-var color_garcon = [];
-var color_fille = [];
-
-$.ajax({
-    type: "GET",
-    url: "/education/prescolaire",
-    data: {
-        type: "bar"
-    },
-    dataType: "json",
-    success: function (response) {
-        for (index = 0; index < response.regions.length; index++) {
-            // console.log(response.regions[index].region); 
-            label_regions.push(response.regions[index].region);
-            percent_garcon.push(response.regions[index].garcon);
-            percent_fille.push(response.regions[index].fille);
-            color_garcon.push('rgba(35, 18, 225, 0.5)');
-            color_fille.push('rgba(255, 99, 132, 0.5)');
-        }
-
-        // test chart js
-        var ctx = document.getElementById('myChart').getContext('2d');
-        // console.log(label_regions);
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: label_regions,
-                datasets: [{
-                    label: '% Garçon',
-                    data: percent_garcon,
-                    backgroundColor: color_garcon,
-                    borderColor: [
-                        'rgba(35, 18, 225, 0.795)',
-                        // 'rgba(54, 162, 235, 1)',
-                        // 'rgba(255, 206, 86, 1)',
-                        // 'rgba(75, 192, 192, 1)',
-                        // 'rgba(153, 102, 255, 1)',
-                        // 'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }, {
-                    label: '% Fille',
-                    data: percent_fille,
-                    backgroundColor: color_fille,
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        // 'rgba(54, 162, 235, 1)',
-                        // 'rgba(255, 206, 86, 1)',
-                        // 'rgba(75, 192, 192, 1)',
-                        // 'rgba(153, 102, 255, 1)',
-                        // 'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
+    switch (niveau_selected) {
+        case "ps":
+            get_data_for("ps");
+            break;
+        case "ms":
+            get_data_for("ms");
+            break;
+        case "gs":
+            get_data_for("gs");
+            break;
+        default:
+            break;
     }
+
 });
+// fonction requetes Ajax /education/prescolaire
+function get_data_for(niveau) {
+
+    var label_regions = [];
+    var percent_garcon = [];
+    var percent_fille = [];
+    var color_garcon = [];
+    var color_fille = [];
+
+    $.ajax({
+        type: "GET",
+        url: "/education/prescolaire",
+        data: {
+            type: "bar",
+            niveau: niveau
+        },
+        dataType: "json",
+        success: function (response) {
+            for (index = 0; index < response.regions.length; index++) {
+                // console.log(response.regions[index].region); 
+                label_regions.push(response.regions[index].region);
+                percent_garcon.push(response.regions[index].garcon);
+                percent_fille.push(response.regions[index].fille);
+                color_garcon.push('rgba(35, 18, 225, 0.5)');
+                color_fille.push('rgba(255, 99, 132, 0.5)');
+
+                $('.niveau').text(response.regions[index].niveau);
+            }
+
+            // test chart js
+            var ctx = document.getElementById('myChart').getContext('2d');
+            // console.log(label_regions);
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: label_regions,
+                    datasets: [{
+                        label: '% Garçon',
+                        data: percent_garcon,
+                        backgroundColor: color_garcon,
+                        borderColor: [
+                            'rgba(35, 18, 225, 0.795)',
+                            // 'rgba(54, 162, 235, 1)',
+                            // 'rgba(255, 206, 86, 1)',
+                            // 'rgba(75, 192, 192, 1)',
+                            // 'rgba(153, 102, 255, 1)',
+                            // 'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }, {
+                        label: '% Fille',
+                        data: percent_fille,
+                        backgroundColor: color_fille,
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            // 'rgba(54, 162, 235, 1)',
+                            // 'rgba(255, 206, 86, 1)',
+                            // 'rgba(75, 192, 192, 1)',
+                            // 'rgba(153, 102, 255, 1)',
+                            // 'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+    });
+}
+
 
 
 

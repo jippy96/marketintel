@@ -30,27 +30,37 @@ def prescolaire(request):
     tableau = {}
     # données du taux brut d'admission pour le préscolaire
     if request.GET:
-        print(request.GET['type'])
-        datas = Taux_brut_admission.objects.all()
+
+        niveau = 3
+        
+        if request.GET['niveau'] == "ps":
+            niveau = 3
+        elif request.GET['niveau'] == "ms":
+            niveau = 4
+        elif request.GET['niveau'] == "gs":
+            niveau = 2
+
+        datas = Taux_brut_admission.objects.filter(niveau_etude=niveau)
         for data in datas:
             tableau = {
                 'region': data.region,
                 'garcon': data.garcon,
                 'fille': data.fille,
                 'total': data.total,
-                
+                'niveau': data.niveau_etude.nom
+
             }
 
             liste.append(tableau)
         tableau = {
-            'regions':liste
+            'regions': liste
         }
         return JsonResponse(tableau)
-    
+
     return render(
         request,
         'education/prescolaire.html', {
-           
+
         }
     )
 
