@@ -56,11 +56,15 @@ def prescolaire(request):
             'regions': liste
         }
         return JsonResponse(tableau)
-
+    
+    annees = []
+    for x in range(2010,2021,1):
+        annees.append(x)
+        
     return render(
         request,
         'education/prescolaire.html', {
-
+            'annees':annees
         }
     )
 

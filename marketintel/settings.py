@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
+
+import django_heroku
 import os
 from pathlib import Path
 
@@ -129,3 +131,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
