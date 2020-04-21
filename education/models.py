@@ -11,7 +11,7 @@ class Niveau_etude(models.Model):
 # ce modele represente le taux d'admission pour tous les niveaux
 class Taux_brut_admission(models.Model):
 
-	region = models.CharField(max_length=30, unique=True)
+	region = models.CharField(max_length=30)
 	garcon = models.FloatField(default=0)
 	fille = models.FloatField(default=0)
 	total = models.FloatField(default=0)
