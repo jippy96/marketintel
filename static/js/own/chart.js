@@ -200,6 +200,8 @@ $('#niveau').change(function (e) {
 
 });
 // fonction requetes Ajax /education/prescolaire
+
+// Taux brut d'admission
 function get_data_for(niveau) {
 
     var label_regions = [];
@@ -277,6 +279,7 @@ function get_data_for(niveau) {
     });
 }
 
+// Affichage au chargement de la page
 var label_regions = [];
 var percent_garcon = [];
 var percent_fille = [];
@@ -350,6 +353,102 @@ $.ajax({
         });
     }
 });
+
+// Taux brut de prescolarisation
+function get_data_for_tbp() {
+     // test chart js
+     var ctx = document.getElementById('myChart').getContext('2d');
+     // console.log(label_regions);
+     var myChart = new Chart(ctx, {
+         type: 'bar',
+         data: {
+             labels: label_regions,
+             datasets: [{
+                 label: '% Garçon',
+                 data: percent_garcon,
+                 backgroundColor: color_garcon,
+                 borderColor: [
+                     'rgba(35, 18, 225, 0.795)',
+                     // 'rgba(54, 162, 235, 1)',
+                     // 'rgba(255, 206, 86, 1)',
+                     // 'rgba(75, 192, 192, 1)',
+                     // 'rgba(153, 102, 255, 1)',
+                     // 'rgba(255, 159, 64, 1)'
+                 ],
+                 borderWidth: 1
+             }, {
+                 label: '% Fille',
+                 data: percent_fille,
+                 backgroundColor: color_fille,
+                 borderColor: [
+                     'rgba(255, 99, 132, 1)',
+                     // 'rgba(54, 162, 235, 1)',
+                     // 'rgba(255, 206, 86, 1)',
+                     // 'rgba(75, 192, 192, 1)',
+                     // 'rgba(153, 102, 255, 1)',
+                     // 'rgba(255, 159, 64, 1)'
+                 ],
+                 borderWidth: 1
+             }]
+         },
+         options: {
+             scales: {
+                 yAxes: [{
+                     ticks: {
+                         beginAtZero: true
+                     }
+                 }]
+             }
+         }
+     });
+}
+
+ // test chart js
+ var ctx = document.getElementById('myChartTBP').getContext('2d');
+ // console.log(label_regions);
+ var myChart = new Chart(ctx, {
+     type: 'bar',
+     data: {
+         labels: label_regions,
+         datasets: [{
+             label: '% Garçon',
+             data: percent_garcon,
+             backgroundColor: color_garcon,
+             borderColor: [
+                 'rgba(35, 18, 225, 0.795)',
+                 // 'rgba(54, 162, 235, 1)',
+                 // 'rgba(255, 206, 86, 1)',
+                 // 'rgba(75, 192, 192, 1)',
+                 // 'rgba(153, 102, 255, 1)',
+                 // 'rgba(255, 159, 64, 1)'
+             ],
+             borderWidth: 1
+         }, {
+             label: '% Fille',
+             data: percent_fille,
+             backgroundColor: color_fille,
+             borderColor: [
+                 'rgba(255, 99, 132, 1)',
+                 // 'rgba(54, 162, 235, 1)',
+                 // 'rgba(255, 206, 86, 1)',
+                 // 'rgba(75, 192, 192, 1)',
+                 // 'rgba(153, 102, 255, 1)',
+                 // 'rgba(255, 159, 64, 1)'
+             ],
+             borderWidth: 1
+         }]
+     },
+     options: {
+         scales: {
+             yAxes: [{
+                 ticks: {
+                     beginAtZero: true
+                 }
+             }]
+         }
+     }
+ });
+// end for /education/prescolaire
 
 
 
