@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import Niveau_etude, Taux_brut_admission
+from .models import Niveau_etude, Taux_brut_admission, Taux_brut_scolarisation
+import datetime
+
 
 # Create your views here.
 
@@ -24,50 +26,82 @@ def garderie(request):
 # méthode qui traite la vue préscolaire
 
 
-def prescolaire(request):
+def prescolaire(request, year=datetime.datetime.now().year):
 
     liste = []
     tableau = {}
+
     # données du taux brut d'admission pour le préscolaire
     if request.GET:
 
-        niveau = 3
-        
-        if request.GET['niveau'] == "ps":
+        if request.GET['type'] == 'TBA':
             niveau = 3
-        elif request.GET['niveau'] == "ms":
-            niveau = 4
-        elif request.GET['niveau'] == "gs":
-            niveau = 2
 
-        datas = Taux_brut_admission.objects.filter(niveau_etude=niveau)
-        for data in datas:
+            if request.GET['niveau'] == "ps":
+                niveau = 3
+            elif request.GET['niveau'] == "ms":
+                niveau = 4
+            elif request.GET['niveau'] == "gs":
+                niveau = 2
+
+            datas = Taux_brut_admission.objects.filter(
+                niveau_etude=niveau, annee=year).exclude(region="Sénégal")
+            for data in datas:
+                tableau = {
+                    'region': data.region,
+                    'garcon': data.garcon,
+                    'fille': data.fille,
+                    'total': data.total,
+                    'niveau': data.niveau_etude.nom
+
+                }
+
+                liste.append(tableau)
             tableau = {
-                'region': data.region,
-                'garcon': data.garcon,
-                'fille': data.fille,
-                'total': data.total,
-                'niveau': data.niveau_etude.nom
+                'regions': liste
+            }
+            return JsonResponse(tableau)
 
+        elif request.GET['type'] == "PRESCOLARISATION":
+            datas = Taux_brut_scolarisation.objects.filter(
+                niveau_etude=1,
+                annee=year
+            ).exclude(region="Sénégal")
+            for data in datas:
+                tableau = {
+                    'region': data.region,
+                    'garcon': data.garcon,
+                    'fille': data.fille,
+                    'total': data.total,
+                    'niveau': data.niveau_etude.nom
+
+                }
+
+                liste.append(tableau)
+            tableau = {
+                'regions': liste
             }
 
-            liste.append(tableau)
-        tableau = {
-            'regions': liste
-        }
-        return JsonResponse(tableau)
-    
+            return JsonResponse(tableau)
+
+        else:
+            pass
+
     annees = []
-    for x in range(2010,2021,1):
+    for x in range(2010, 2021, 1):
         annees.append(x)
-        
+
     return render(
         request,
         'education/prescolaire.html', {
-            'annees':annees
+            'annees': annees,
+            'current_year': year,
         }
     )
 
+
+def primaire(request):
+    pass
 
 # from .models import prescolaire, elementaire, moyen, secondaire
 

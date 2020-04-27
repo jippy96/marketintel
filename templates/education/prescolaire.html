@@ -39,19 +39,19 @@
 						<div
 							class="card-body">
 							<!-- <div class="row mt-4 mb-4">
-																																																																																																																																																																												<div class="col-lg-4 col-md-4 col-sm-12">
-																																																																																																																																																																													<h6 class="text-center">Investissement de l'Etat</h6>
-																																																																																																																																																																													<h2 class="text-center">1 000 000 000</h2>
-																																																																																																																																																																												</div>
-																																																																																																																																																																												<div class="col-lg-4 col-md-4 col-sm-12">
-																																																																																																																																																																													<h6 class="text-center">Cout Moyen de formation</h6>
-																																																																																																																																																																													<h2 class="text-center">650 000</h2>
-																																																																																																																																																																												</div>
-																																																																																																																																																																												<div class="col-lg-4 col-md-4 col-sm-12">
-																																																																																																																																																																													<h6 class="text-center">Evaluation des dépenses</h6>
-																																																																																																																																																																													<h2 class="text-center">25 000 000 000</h2>
-																																																																																																																																																																												</div>
-																																																																																																																																																																											</div> -->
+																																																																																																																																																																																																																						<div class="col-lg-4 col-md-4 col-sm-12">
+																																																																																																																																																																																																																							<h6 class="text-center">Investissement de l'Etat</h6>
+																																																																																																																																																																																																																							<h2 class="text-center">1 000 000 000</h2>
+																																																																																																																																																																																																																						</div>
+																																																																																																																																																																																																																						<div class="col-lg-4 col-md-4 col-sm-12">
+																																																																																																																																																																																																																							<h6 class="text-center">Cout Moyen de formation</h6>
+																																																																																																																																																																																																																							<h2 class="text-center">650 000</h2>
+																																																																																																																																																																																																																						</div>
+																																																																																																																																																																																																																						<div class="col-lg-4 col-md-4 col-sm-12">
+																																																																																																																																																																																																																							<h6 class="text-center">Evaluation des dépenses</h6>
+																																																																																																																																																																																																																							<h2 class="text-center">25 000 000 000</h2>
+																																																																																																																																																																																																																						</div>
+																																																																																																																																																																																																																					</div> -->
 							<h4 class="card-title">Card title</h4>
 
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's</p>
@@ -73,7 +73,7 @@
 							<h4 class="card-title">Card title</h4>
 							<!-- Text -->
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																																																																																																																																																																																														      content.</p>
+																																																																																																																																																																																																																																																																																																																																																														      content.</p>
 						</div>
 
 					</div>
@@ -92,7 +92,7 @@
 							<h4 class="card-title">Card title</h4>
 							<!-- Text -->
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																																																																																																																																																																																														      content.</p>
+																																																																																																																																																																																																																																																																																																																																																														      content.</p>
 						</div>
 
 					</div>
@@ -111,7 +111,7 @@
 							<h4 class="card-title">Card title</h4>
 							<!-- Text -->
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																																																																																																																																																																																														      content.</p>
+																																																																																																																																																																																																																																																																																																																																																														      content.</p>
 						</div>
 
 					</div>
@@ -132,22 +132,32 @@
 			<div class="col-2"></div>
 			<div class="col-1"></div>
 			<div class="co-lg-2 col-md-2 col-sm-12">
-				<select class="form-control">
-					<option value="" disabled selected>Changer d'année</option>
+				<select class="form-control" id="yearPrescolaire">
+					<option disabled selected>Changer d'année</option>
 
 					{% for annee in annees %}
-						<option value="{{annee}}">{{annee}}</option>
+
+						{% if annee == current_year %}
+							<option selected value="{{annee}}">{{annee}}</option>
+
+						{% else %}
+							<option value="{{annee}}">{{annee}}</option>
+
+						{% endif %}
 					{% endfor %}
 				</select>
 			</div>
 		</div>
 		<div class="row mt-4 mb-4">
 			<div class="col-lg-6 col-md-6 col-sm-12">
-				<div class="card">
+				<div class="card" style="height: 505px; width:100%;">
 					<div class="card-body">
 						<div class="row">
 							<div class="col-8">
-								<h4 class="card-title">Taux brut d'admission 2018 (<span class="niveau">Petite Section</span>)</h4>
+								<h4 class="card-title">Taux brut d'admission
+									{{ current_year }}
+									<br>
+									(<span class="niveau">Petite Section</span>)</h4>
 							</div>
 							<div class="col-4">
 								<select class="form-control" id="niveau">
@@ -159,20 +169,41 @@
 							</div>
 						</div>
 
-						<canvas id="myChart" width="400" height="300"></canvas>
+						<div id="myChartTBA" style="height: 400px; width: 100%;"></div>
+
+						<div class="row loader" style="Visibility: hidden;">
+							<div class="col-5"></div>
+							<div class="col-1" style="margin-top: 150px;">
+								<div class="spinner-border" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-12">
-				<div class="card">
+				<div class="card" style="height: 505px; width:100%;">
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12">
-								<h4 class="card-title">Taux brut de préscolarisation et indice de parité 2018</h4>
+								<h4 class="card-title">Taux brut de préscolarisation et indice de parité
+									{{current_year}}</h4>
 							</div>
 						</div>
-						<canvas id="myChartTBP" width="400" height="300"></canvas>
-						
+						<br>
+
+						<div id="myChartTBP" style="height: 400px; width: 100%;"></div>
+
+						<div class="row loader" style="Visibility: hidden;">
+							<div class="col-5"></div>
+							<div class="col-1" style="margin-top: 150px;">
+								<div class="spinner-border" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -197,5 +228,8 @@
 
 {% block javascripts %}
 	<script src="{% static 'chart/Chart.min.js' %}"></script>
-	<script src="{% static 'js/own/chart.js' %}"></script>
+	<script src="{% static 'js/own/chartPrescolaire.js' %}"></script>
+
+	<script src="{% static 'canvasjs/canvasjs.min.js' %}"></script>
+	<script src="{% static 'canvasjs/jquery.canvasjs.min.js' %}"></script>
 {% endblock %}

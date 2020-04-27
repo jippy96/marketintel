@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 
 class Niveau_etude(models.Model):
@@ -17,7 +18,7 @@ class Taux_brut_admission(models.Model):
     garcon = models.FloatField(default=0)
     fille = models.FloatField(default=0)
     total = models.FloatField(default=0)
-    annee = models.IntegerField()
+    annee = models.IntegerField(default=datetime.datetime.now().year)
     commentaire = models.TextField(null=True, blank=True)
 #  ce champ fait la jointure avec le type de niveau auquel les données appartienent
     niveau_etude = models.ForeignKey(Niveau_etude, on_delete=models.CASCADE)
@@ -36,7 +37,7 @@ class Taux_brut_scolarisation(models.Model):
     total = models.FloatField()
     indice_de_parite = models.FloatField()
     commentaire = models.TextField(blank=True, null=True)
-
+    annee = models.IntegerField(default=datetime.datetime.now().year)
     niveau_etude = models.ForeignKey(Niveau_etude, on_delete=models.CASCADE)
 
     def __str__(self):
