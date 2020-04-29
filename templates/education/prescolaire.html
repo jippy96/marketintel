@@ -130,7 +130,15 @@
 		<div class="row mt-2">
 			<div class="col-2"></div>
 			<div class="col-2"></div>
-			<div class="col-1"></div>
+			<div class="col-2">
+				<select class="form-control" id="changeNiveau">
+					<option value="" disabled selected>Changer niveau d'étude</option>
+					<option value="prescolaire">Préscolaire</option>
+					<option value="elementaire">Elémentaire</option>
+					<option value="moyen">Moyen</option>
+					<option value="secondaire">Secondaire</option>
+				</select>
+			</div>
 			<div class="co-lg-2 col-md-2 col-sm-12">
 				<select class="form-control" id="yearPrescolaire">
 					<option disabled selected>Changer d'année</option>
@@ -229,6 +237,7 @@
 {% block javascripts %}
 	<script src="{% static 'chart/Chart.min.js' %}"></script>
 	<script src="{% static 'js/own/chartPrescolaire.js' %}"></script>
+	<script src="{% static 'js/own/main.js' %}"></script>
 
 	<script src="{% static 'canvasjs/canvasjs.min.js' %}"></script>
 	<script src="{% static 'canvasjs/jquery.canvasjs.min.js' %}"></script>

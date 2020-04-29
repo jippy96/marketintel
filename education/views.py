@@ -100,8 +100,8 @@ def prescolaire(request, year=datetime.datetime.now().year):
     )
 
 
-def primaire(request):
-    pass
+def elementaire(request):
+    return render(request, 'education/elementaire.html')
 
 # from .models import prescolaire, elementaire, moyen, secondaire
 

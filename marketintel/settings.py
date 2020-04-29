@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
-import django_heroku
+# import django_heroku
 import os
 from pathlib import Path
 
@@ -133,4 +133,4 @@ STATICFILES_DIRS = (
 )
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
