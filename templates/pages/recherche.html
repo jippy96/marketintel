@@ -1,0 +1,92 @@
+{% extends "commun/base.html" %}
+{% load static %}
+{% block title %}Résulats de la recherche
+	{{ item }}
+	| Marketintel
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		{% include "commun/header.html" %}
+	</div>
+
+	<div class="custom-search">
+		<div class="container">
+			<div class="row  mb-4">
+				<div class="col-12">
+					<h1 class="text-center titre">Résultats de votre recherche</h1>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-lg-3 col-md-3"></div>
+				<div class="col-lg-6 col-md-6">
+					<form class="form-inline" action="{% url 'recherche_results' %}" method="GET">
+						<div class="md-form active-purple-2 mb-3 autocomplete">
+							<input id="inputSearch" value="{{item}}" name="q" class="form-control" type="search" placeholder="Rechercher par un mot ou une question" aria-label="Search">
+						</div>
+						<button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">
+							<i class="fas fa-search fa-2x"></i>
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-lg-4">
+					<label class="label-search" for="tri">Trier par
+					</label>
+					<select name="" class="tri">
+						<option value="" disabled selected>...</option>
+						<option value="date">Date</option>
+						<option value="date">Perinence</option>
+					</select>
+				</div>
+				<div class="col-lg-4">
+					<label class="label-search" for="theme">Par thème
+					</label>
+					<select name="" class="tri">
+						<option value="" disabled selected>...</option>
+						<option value="date">Education</option>
+						<option value="date">Santé</option>
+					</select>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div class="row">
+					<label>Nombre de Résultats ()</label>
+				</div>
+                    
+				<div class="row">
+					<div class="pagination">
+						<a href="#">&laquo;</a>
+						<a href="#">1</a>
+						<a class="active" href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">6</a>
+						<a href="#">&raquo;</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{% static 'js/own/main.js' %}"></script>
+
+{% endblock %}
