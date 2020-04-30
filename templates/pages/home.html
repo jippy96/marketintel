@@ -20,7 +20,19 @@
 					<h1 class="text-center titre">Lorem Ipsum</h1>
 				</div>
 			</div>
-
+			<div class="row mb-4">
+				<div class="col-lg-3 col-md-3"></div>
+				<div class="col-lg-6 col-md-6">
+					<form class="form-inline" action="{% url 'recherche_results' %}" method="GET">
+						<div class="md-form active-purple-2 mb-3 autocomplete">
+							<input id="inputSearch" name="q" class="form-control" type="search" placeholder="Rechercher par un mot ou une question" aria-label="Search">
+						</div>
+						<button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">
+							<i class="fas fa-search fa-2x"></i>
+						</button>
+					</form>
+				</div>
+			</div>
 			<div class="row mb-4">
 				<div class="col-12">
 					<h2 class="text-center titre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea porro, repellendus culpa doloribus natus magni, ad cupiditate fugit dicta nisi sequi id, fugiat dolor! Voluptatibus, libero sed! Necessitatibus, minus!</h2>
@@ -37,19 +49,19 @@
 						<div
 							class="card-body">
 							<!-- <div class="row mt-4 mb-4">
-																																																																																																						<div class="col-lg-4 col-md-4 col-sm-12">
-																																																																																																							<h6 class="text-center">Investissement de l'Etat</h6>
-																																																																																																							<h2 class="text-center">1 000 000 000</h2>
-																																																																																																						</div>
-																																																																																																						<div class="col-lg-4 col-md-4 col-sm-12">
-																																																																																																							<h6 class="text-center">Cout Moyen de formation</h6>
-																																																																																																							<h2 class="text-center">650 000</h2>
-																																																																																																						</div>
-																																																																																																						<div class="col-lg-4 col-md-4 col-sm-12">
-																																																																																																							<h6 class="text-center">Evaluation des dépenses</h6>
-																																																																																																							<h2 class="text-center">25 000 000 000</h2>
-																																																																																																						</div>
-																																																																																																					</div> -->
+																																																																																																																											<div class="col-lg-4 col-md-4 col-sm-12">
+																																																																																																																												<h6 class="text-center">Investissement de l'Etat</h6>
+																																																																																																																												<h2 class="text-center">1 000 000 000</h2>
+																																																																																																																											</div>
+																																																																																																																											<div class="col-lg-4 col-md-4 col-sm-12">
+																																																																																																																												<h6 class="text-center">Cout Moyen de formation</h6>
+																																																																																																																												<h2 class="text-center">650 000</h2>
+																																																																																																																											</div>
+																																																																																																																											<div class="col-lg-4 col-md-4 col-sm-12">
+																																																																																																																												<h6 class="text-center">Evaluation des dépenses</h6>
+																																																																																																																												<h2 class="text-center">25 000 000 000</h2>
+																																																																																																																											</div>
+																																																																																																																										</div> -->
 							<h4 class="card-title">Card title</h4>
 
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's</p>
@@ -71,7 +83,7 @@
 							<h4 class="card-title">Card title</h4>
 							<!-- Text -->
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																																																																																																														      content.</p>
+																																																																																																																																																																																																																																																						      content.</p>
 						</div>
 
 					</div>
@@ -90,7 +102,7 @@
 							<h4 class="card-title">Card title</h4>
 							<!-- Text -->
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																																																																																																														      content.</p>
+																																																																																																																																																																																																																																																						      content.</p>
 						</div>
 
 					</div>
@@ -109,7 +121,7 @@
 							<h4 class="card-title">Card title</h4>
 							<!-- Text -->
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																																																																																																														      content.</p>
+																																																																																																																																																																																																																																																						      content.</p>
 						</div>
 
 					</div>
@@ -145,12 +157,12 @@
 					</a>
 					<div class="content">
 						<ul class="list-group list-group-flush">
-					
+
 							<a href="{% url 'education:education_prescolaire' 2020 %}" type="button" class="list">
 								<li class="list-group-item">Préscolaire
 								</li>
 							</a>
-							<a href="{% url 'education:education_primaire' %}" type="button" class="list">
+							<a href="{% url 'education:education_elementaire' %}" type="button" class="list">
 								<li class="list-group-item">Primaire</li>
 							</a>
 							<a type="button" class="list">
@@ -316,11 +328,12 @@
 	</div>
 
 
-{% endblock %} 
+{% endblock %}
 
 {% block javascripts %}
 	<script src="{% static 'chart/Chart.js' %}"></script>
 	<script src="{% static 'js/own/chart.js' %}"></script>
+	<script src="{% static 'js/own/main.js' %}"></script>
 	<script src="{% static 'canvasjs/canvasjs.min.js' %}"></script>
 	<script src="{% static 'canvasjs/jquery.canvasjs.min.js' %}"></script>
 {% endblock %}
