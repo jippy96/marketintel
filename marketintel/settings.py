@@ -33,9 +33,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'compte.apps.CompteConfig',
     'partage.apps.PartageConfig',
     'education.apps.EducationConfig',
-    'modele.apps.ModeleConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
