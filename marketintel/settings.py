@@ -33,9 +33,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'compte.apps.CompteConfig',
+    'partage.apps.PartageConfig',
     'education.apps.EducationConfig',
-    'modele.apps.ModeleConfig',
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'marketintel',
         'USER': 'postgres',
-        'PASSWORD':'toor2020',
+        'PASSWORD':'badou',
         'HOST':'127.0.0.1',
         'PORT':'5432'
     }
