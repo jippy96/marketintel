@@ -57,7 +57,7 @@ body{
 .custom{
     background-color: rgba(25, 175, 142, 0.795);
     margin-top: -120px;
-    height: 750px;
+    height: 950px;
 }
 
 h1.titre{
@@ -225,6 +225,111 @@ h2.titre{
 /* Add a grey background color on mouse-over */
 .pagination a:hover:not(.active) {background-color: #ddd;}
 
+.custom-card:hover .card{
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*Circular Progress bar */
+#circlebar-tbs .round{
+  min-height: 55px;
+  margin-top: 30px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#circlebar-tbs .round strong{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  transform: translate(-50%);
+  font-size: 40px;
+  color: #53BE96;
+  font-weight: 100;
+}
+
+#circlebar-tbs span{
+  display: block;
+  color: #30e0b9;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+/*Circular Progress bar */
+#circlebar-bac .round-bac{
+  min-height: 55px;
+  margin-top: 30px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#circlebar-bac .round-bac strong{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  transform: translate(-50%);
+  font-size: 40px;
+  color: #53BE96;
+  font-weight: 100;
+}
+
+#circlebar-bac span{
+  display: block;
+  color: #30e0b9;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+/*Circular Progress bar */
+#circlebar-chomage .round-chomage{
+  min-height: 55px;
+  margin-top: 30px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#circlebar-chomage .round-chomage strong{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  transform: translate(-50%);
+  font-size: 40px;
+  color: #53BE96;
+  font-weight: 100;
+}
+
+#circlebar-chomage span{
+  display: block;
+  color: #30e0b9;
+  font-size: 17px;
+  margin-top: 10px;
+}
+/*Circular Progress bar */
+#circlebar-alpha .round-alpha{
+  min-height: 55px;
+  margin-top: 30px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#circlebar-alpha .round-alpha strong{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  transform: translate(-50%);
+  font-size: 40px;
+  color: #53BE96;
+  font-weight: 100;
+}
+
+#circlebar-alpha span{
+  display: block;
+  color: #30e0b9;
+  font-size: 17px;
+  margin-top: 10px;
+}
 @media only screen and (max-width: 600px) {
     .custom{
         background-color: rgba(25, 175, 142, 0.795);

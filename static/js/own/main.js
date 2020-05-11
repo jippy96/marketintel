@@ -1,5 +1,26 @@
 $(document).ready(function () {
 
+    // circle progress bar
+    function circle (el,second) { 
+        $(el).circleProgress(
+            {
+                animation: {
+                    duration: 1200,
+                    easing: "linear",
+                },
+                fill:{
+                    color: '#53BE96'
+                }
+            }
+        ).on('circle-animation-progress', function(event,progress,stepvalue){
+            $(this).find(second).text(String(stepvalue.toFixed(2)).substr(2)+'%');
+        });
+    };
+    circle('.round','.strong');
+    circle('.round-bac','.strong-bac');
+    circle('.round-chomage','.strong-chomage');
+    circle('.round-alpha','.strong-alpha');
+
     $("#changeNiveau").change(function (e) {
         e.preventDefault();
         var niveau = $(this).val();

@@ -29,95 +29,7 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div
-					class="col-lg-3 col-md-3 col-sm-6 mb-3">
-					<!-- Card -->
-					<div
-						class="card">
-						<!-- Card content -->
-						<div
-							class="card-body">
-							<!-- <div class="row mt-4 mb-4">
-																																																																																																																																																																																																																						<div class="col-lg-4 col-md-4 col-sm-12">
-																																																																																																																																																																																																																							<h6 class="text-center">Investissement de l'Etat</h6>
-																																																																																																																																																																																																																							<h2 class="text-center">1 000 000 000</h2>
-																																																																																																																																																																																																																						</div>
-																																																																																																																																																																																																																						<div class="col-lg-4 col-md-4 col-sm-12">
-																																																																																																																																																																																																																							<h6 class="text-center">Cout Moyen de formation</h6>
-																																																																																																																																																																																																																							<h2 class="text-center">650 000</h2>
-																																																																																																																																																																																																																						</div>
-																																																																																																																																																																																																																						<div class="col-lg-4 col-md-4 col-sm-12">
-																																																																																																																																																																																																																							<h6 class="text-center">Evaluation des dépenses</h6>
-																																																																																																																																																																																																																							<h2 class="text-center">25 000 000 000</h2>
-																																																																																																																																																																																																																						</div>
-																																																																																																																																																																																																																					</div> -->
-							<h4 class="card-title">Card title</h4>
-
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's</p>
-						</div>
-
-					</div>
-					<!-- Card -->
-				</div>
-				<div
-					class="col-lg-3 col-md-3 col-sm-6 mb-3">
-					<!-- Card -->
-					<div
-						class="card">
-						<!-- Card content -->
-						<div
-							class="card-body">
-
-							<!-- Title -->
-							<h4 class="card-title">Card title</h4>
-							<!-- Text -->
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																																																																																																																																																																																																																																														      content.</p>
-						</div>
-
-					</div>
-					<!-- Card -->
-				</div>
-				<div
-					class="col-lg-3 col-md-3 col-sm-6 mb-3">
-					<!-- Card -->
-					<div
-						class="card">
-						<!-- Card content -->
-						<div
-							class="card-body">
-
-							<!-- Title -->
-							<h4 class="card-title">Card title</h4>
-							<!-- Text -->
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																																																																																																																																																																																																																																														      content.</p>
-						</div>
-
-					</div>
-					<!-- Card -->
-				</div>
-				<div
-					class="col-lg-3 col-md-3 col-sm-6 mb-3">
-					<!-- Card -->
-					<div
-						class="card">
-						<!-- Card content -->
-						<div
-							class="card-body">
-
-							<!-- Title -->
-							<h4 class="card-title">Card title</h4>
-							<!-- Text -->
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-																																																																																																																																																																																																																																																																																																																																																														      content.</p>
-						</div>
-
-					</div>
-					<!-- Card -->
-				</div>
-			</div>
+			{% include "commun/circlebar.html" %}
 		</div>
 	</div>
 
@@ -235,6 +147,8 @@
 {% endblock %}
 
 {% block javascripts %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.0/circle-progress.min.js"></script>
+
 	<script src="{% static 'chart/Chart.min.js' %}"></script>
 	<script src="{% static 'js/own/chartPrescolaire.js' %}"></script>
 	<script src="{% static 'js/own/main.js' %}"></script>
