@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'marketintel',
         'USER': 'postgres',
-        'PASSWORD':'toor2020',
+        'PASSWORD':'badou',
         'HOST':'127.0.0.1',
         'PORT':'5432'
     }

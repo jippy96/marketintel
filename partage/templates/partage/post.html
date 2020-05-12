@@ -1,1 +1,458 @@
 {% extends "commun/base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+	<!-- Bootstrap 3.3.7 -->
+	  <link rel="stylesheet" href="{% static 'partage/bootstrap/dist/css/bootstrap.min.css' %}">
+	  <!-- Font Awesome -->
+	  <link rel="stylesheet" href="{% static 'partage/font-awesome/css/font-awesome.min.css' %}">
+	  <!-- Ionicons -->
+	  <link rel="stylesheet" href="/static/MarketIntel/bower_components/Ionicons/css/ionicons.min.css">
+	  <!-- Theme style -->
+	  <link rel="stylesheet" href="{% static 'partage/dist/css/AdminLTE.min.css' %}">
+	  <link rel="stylesheet" href="{% static 'partage/dist/css/main.css' %}">
+	  <!-- AdminLTE Skins. Choose a skin from the css/skins
+	       folder instead of downloading all of them to reduce the load. -->
+	  <link rel="stylesheet" href="{% static '/dist/css/skins/_all-skins.min.css' %}">
+	  <!-- Morris chart -->
+	  <link rel="stylesheet" href="{% static 'partage/dist/css/morris.css' %}">
+	  <!-- jvectormap -->
+	  <link rel="stylesheet" href="{% static 'partage/jvectormap/jquery-jvectormap.css' %}">
+	  <!-- Date Picker -->
+	  <link rel="stylesheet" href="{% static 'partage/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}">
+	  <!-- Daterange picker -->
+	  <link rel="stylesheet" href="{% static 'partage/dist/css/daterangepicker.css' %}">
+	  <!-- bootstrap wysihtml5 - text editor -->
+	  <link rel="stylesheet" href="{% static 'partage/dist/css/bootstrap3-wysihtml5.min.css' %}">
+
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
+
+	  <!-- Google Font -->
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	  <!-- bootstrap wysihtml5 - text editor -->
+	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+
+
+	  <style type="text/css">
+	    .round3 {
+	        border: 1px solid;
+	        border-radius: 12px;
+	        border-color: #3399ff;
+	        height: inherit;
+
+
+	    }
+
+	  .btn1 {
+	      background-color: DodgerBlue;
+	      border: none;
+	      color: white;
+	      padding: 10px 30px;
+	      font-size: 16px;
+	      cursor: pointer;
+	      margin-left:-10px;
+	  }
+
+	  /* Darker background on mouse-over */
+	  .btn1:hover {
+	      background-color: RoyalBlue;
+
+	  }
+	    #somechart {
+	      position: relative;
+	      display: inline-block;
+	      width: 110px;
+	      height: 110px;
+	      margin-top: 10px;
+	      margin-bottom: 10px;
+	      text-align: center;
+	    }
+	    #somechart canvas {
+	      position: absolute;
+	      top: 0;
+	      left: 0;
+	    }
+	    .percent {
+	      display: inline-block;
+	      line-height: 100px;
+	      z-index: 2;
+	    }
+	    .percent:after {
+	      content: '%';
+	      margin-left: 0.1em;
+	      font-size: .8em;
+	    }
+
+	  /* Darker background on mouse-over */
+
+	  </style>
+	  <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130744431-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-130744431-1');
+	</script>
+{% endblock %}
+
+{% block body %}
+    
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+
+    <a href=/ class="logo">
+            <img src="/static/MarketIntel/dist/img/volkeno.png" class="img-circle" alt="User Image" style="width: 50px; height: 50px">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>M</b>It</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class=""><b>MarketIntel</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Basculer la navigation</span>
+      </a>
+    <!--  <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+
+          <li>
+              <form action="/i18n/setlang/" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="Hp4eVqSYwMO9f6pqWeZPq54BONxPtByYKd4YUWDkuVxaK5jjEDT18FqhNcIZkNB5">
+                <input name="next" type="hidden" value="" />
+                <select name="language">
+                    
+                    
+                    
+                    
+                      <option value="en">
+                          English (en)
+                      </option>
+                    
+                      <option value="fr"
+                      selected>
+                          français (fr)
+                      </option>
+                    
+                </select>
+                <input class="btn btn-success" type="submit" value="Go" />
+            </form>
+          </li>
+        </ul>
+      </div>-->
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <br>
+
+      <ul class="sidebar-menu" data-widget="tree">
+             <!-- <li class="header">MAIN NAVIGATION</li> -->
+             <li>
+                 <a href="/">
+
+                     <i class="fa fa-home"></i> <span> Voir Post </span>
+                 </a>
+
+             </li>
+             <br>
+             <li class=" treeview">
+               <a href="#">
+                 <i class="fa fa-book"></i> <span>Education</span>
+                 <span class="pull-right-container">
+                   <i class="fa fa-angle-left pull-right"></i>
+                 </span>
+               </a>
+               <ul class=" treeview-menu">
+                 <li><a href="/primary/"><i class="fa fa-circle-o"></i>Primaire</a></li>
+                 <li><a href="/middle/"><i class="fa fa-circle-o"></i>Cycle moyen</a></li>
+                 <li><a href="/secondary/"><i class="fa fa-circle-o"></i>secondaire</a></li>
+                  <li><a href="/tertiary/"><i class="fa fa-circle-o"></i>Tertiaire</a></li>
+               </ul>
+             </li>
+             <!--!
+     ****************************************************************************************************************
+      -->
+              <!-- <ul class="sidebar-menu" data-widget="tree">-->
+             <!-- <li class="header">MAIN NAVIGATION</li> -->
+             <li class=" treeview">
+               <a href="#">
+                 <i class="fa fa-book"></i> <span>Startup</span>
+                 <span class="pull-right-container">
+                   <i class="fa fa-angle-left pull-right"></i>
+                 </span>
+               </a>
+               <ul class="treeview-menu" id='category-list'>
+                  <li class=""><a href="/all-startups/"><i class="fa fa-circle-o"></i>Tout</a></li>
+
+           </ul>
+         </li>
+       </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="row content-header">
+    <section  class="col-lg-9 col-md-9">
+        <h3 class="" style="text-align:center;">Fil d'actualité</h3>
+          </section>
+      </div>
+
+
+    <!-- Main content -->
+    <div class="row">
+      <!-- Small boxes (Stat box) -->
+
+        <section class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
+        </section>
+        <section class="col-lg-2 col-md-2">
+                        <button type="button" class="btn btn-success btn-add"data-toggle="modal" data-target="#myModal" style="position:fixed" >
+
+                          <span class="glyphicon glyphicon-pencil"></span>
+                          <span class="hidePost">Poster une donnée</span>
+                        </button>
+
+        </section>
+    </div>
+
+    <!-- /.Left col -->
+    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+      <!-- Main row -->
+
+      <div class="row">
+        <br>
+        <section class="col-lg-1">
+
+        </section>
+        <!-- Left col -->
+        <section class="col-lg-8 col-md-8 col-sm-12 col-xs-12 connectedSortable">
+          <!-- Custom tabs (Charts with tabs)-->
+          <ul class="list-group">
+
+            
+            <li class="list-group-item ">
+            Une marque de luxe prend 20 ans à s&#39;installer dans un marché. 
+#yux #psa
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            Au Sénégal nous avons 9 millions d&#39;hectares de terres arables (exploitables).
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            Plus de 628 000 enfants au Sénégal ne sont pas scolarisés.
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            Plus de 628 000 enfants au Sénégal ne sont pas scolarisés.
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            Nous avons 27 banques au Sénégal.
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            Le déficit de financement des PMEs en Afrique subsaharienne est estimé à 10 milliards de $.
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            Le déficit de financement des PMEs en Afrique subsaharienne est estimé à 10 milliards de $.
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            70% du cuir au Sénégal est exporté. Puis nous est revendu 10x plus cher après transformation.
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            70% du cuir au Sénégal est exporté. Puis nous est revendu 10x plus cher après transformation.
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            ?
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            Hello
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            poster
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            les electios presidetielles se sont bien passé
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            C&#39;est quoi le concept ???
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            Au Gabon, il y a 5 000 000 de tonnes de mangue.
+
+              <span class="badge"></span></li>
+            <br>
+            
+            <li class="list-group-item ">
+            Je m&#39;appelle Abdoul
+
+              <span class="badge"></span></li>
+            <br>
+            
+
+          </ul>
+        <!-- right col -->
+        <div class="col-md-3 col-xs-3 col-sm-3">
+
+        </div>
+      <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
+
+<div class="modal fade" id="myModal"  role="dialog">
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content" style="width:">
+    <div class="modal-header" style="background-color: #3498db;">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+        .		<h4 style="text-align:center;font-weight: bold,color:white"> Veuillez remplir ce formulaire</h4>
+    </div>
+    <div class="modal-body" >
+      <form method="post" >
+        <h4 stytle="text-align:center"></h4>
+        <input type="hidden" name="csrfmiddlewaretoken" value="Hp4eVqSYwMO9f6pqWeZPq54BONxPtByYKd4YUWDkuVxaK5jjEDT18FqhNcIZkNB5">
+
+        
+
+        
+          <div class="form-group">
+            <label for="id_Petite_description">Petite description :</label>
+            <textarea name="Petite_description" cols="40" required maxlength="100" class="form-control" id="id_Petite_description" rows="10">
+</textarea>
+            
+          </div>
+        
+
+        <button type="submit" class="btn btn-primary">publier</button>
+      </form>
+  </div>
+</div>
+</div>
+  </div>
+
+</div>
+
+  </div>
+
+  
+
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>V1</b>
+    </div>
+    <strong>Copyright &copy; 2018 <a href="">MarketIntel</a>.</strong>
+  </footer>
+
+<!-- jQuery 3 -->
+<script src="{% static 'partage/jquery/dist/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'partage/jquery/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'partage/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- Morris.js charts -->
+<script src="{% static 'partage/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'partage/morris/morris.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'partage/jquery-sparkline/dist/jquery.sparkline.min.js' %}"></script>
+<!-- jvectormap -->
+<script src="{% static 'partage/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'partage/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'partage/jquery-knob/dist/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'partage/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'partage/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<!-- datepicker -->
+<script src="{% static 'partage/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'partage/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js' %}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'partage/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'partage/fastclick/lib/fastclick.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'partage/dist/js/adminlte.min.js' %}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes)for primary -->
+<script src="{% static 'partage/dist/js/pages/dashboard.js' %}"></script>
+<script src="/static/MarketIntel/dist/js/jquery.easypiechart.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'partage/dist/js/demo.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+<script src="{% static 'partage/dist/js/leaflet.ajax.min.js' %}"></script>
+<script type="text/javascript" src="/jsi18n/"></script>
+<script src="{% static 'partage/dist/js/pages/startup_categories.js' %}"></script>
+
+<!-- AdminLTE dashboard demo (This is only for demo purposes) for tertiare-->
+<script src="{% static 'partage/dist/js/pages/dashboard2.js' %}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) middle -->
+<script src="partage/dist/js/pages/middle_dashboard.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{% static 'partage/dist/js/pages/tertiary_dashboard.js' %}"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready( function () {
+	$('#myTable').DataTable();
+} );
+</script>
+<!-- AdminLTE for demo purposes -->
+<script type="text/javascript" src="/jsi18n/"></script>
+<script src="{% static 'partage/dist/js/pages/startuplist.js' %}"></script>
+<script src="{% static 'partage/jquery-ui/jquery-ui.min.js' %}"></script>
+
+{% endblock %}

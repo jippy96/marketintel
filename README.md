@@ -3,6 +3,13 @@
 <!-- Infos utiles -->
 # Info database
 Database : Postgresql
+
+# Parametre database
+
+'NAME': 'marketintel',
+'USER': 'postgres',
+'PASSWORD':'toor2020',
+
 <!--  -->
 # version de python
 Python version : 3.7.6
