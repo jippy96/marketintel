@@ -61,6 +61,21 @@
 				<h2 class="text-center">25 000 000 000</h2>
 			</div>
 		</div>
+		<hr>
+		<div class="row">
+			<div class="col">
+				<h4 style="font-size: 32px; font-weight: 500;" class="text-center">Thèmes Populaires</h4>
+			</div>
+		</div>
+		<div class="row mt-2 mb-4">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="theme-populaire">
+					{% for theme in themes %}
+						<a href=" {% url 'theme:detail_theme' theme.numero theme.nom|slugify %} "> {{ theme.nom }} </a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
 	</div>
 
 
@@ -77,8 +92,8 @@
 								<li class="list-group-item">Préscolaire
 								</li>
 							</a>
-							<a href="{% url 'education:education_elementaire' %}" type="button" class="list">
-								<li class="list-group-item">Primaire</li>
+							<a href="{% url 'education:education_elementaire' 2020 %}" type="button" class="list">
+								<li class="list-group-item">Elémentaire</li>
 							</a>
 							<a type="button" class="list">
 								<li class="list-group-item">Moyen</li>

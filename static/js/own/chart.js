@@ -11,7 +11,7 @@ for (i = 0; i < coll.length; i++) {
             content.style.display = "block";
         }
     });
-}
+} 
 
 window.onload = function () {
 

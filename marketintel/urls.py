@@ -25,6 +25,8 @@ urlpatterns = [
     path('post/', include('partage.urls', namespace='partage')),
     path('compte/', include('compte.urls', namespace='compte')),
     path('education/', include('education.urls')),
+    path('themes/', include('theme.urls')),
+    
     path('', views.home, name="home_index"),
     path('search/', views.search, name="home_search"),
     path('recherche/',views.recherche, name="recherche_results")

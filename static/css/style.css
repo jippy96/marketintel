@@ -23,7 +23,7 @@
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 100;
 }
 
 /* Links inside the dropdown */
@@ -43,17 +43,14 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 .navbar{
-  z-index: 1;
   position: fixed;
   top: 0;
-  overflow: hidden;
+  overflow: visible;
   width: 98%;
+  z-index: 10;
 }
 
 /* End nav bar */
-body{
-  z-index: -1;
-}
 .custom{
     background-color: rgba(25, 175, 142, 0.795);
     margin-top: -120px;
@@ -329,6 +326,16 @@ h2.titre{
   color: #30e0b9;
   font-size: 17px;
   margin-top: 10px;
+}
+
+/* affichage stylisé des thèmes populaires */
+.theme-populaire a{
+  color: #53be96;
+  font-weight: 500;
+  margin-right: 20px;
+}
+.theme-populaire{
+  text-align: center;
 }
 @media only screen and (max-width: 600px) {
     .custom{

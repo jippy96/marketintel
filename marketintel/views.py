@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from theme.models import Theme
 
 def home(request):
+    
+    context = {
+        'themes': Theme.objects.all()
+    }
     return render(
         request,
-        'pages/home.html',{
-            
-        }
+        'pages/home.html',context
     )
 
 # méthode pour la recherche 

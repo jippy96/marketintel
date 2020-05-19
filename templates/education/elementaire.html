@@ -1,1 +1,151 @@
 {% extends "commun/base.html" %}
+
+ {% load static %}
+
+ {% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'chart/Chart.css' %}">
+ {% endblock stylesheets %}
+
+{% block title %}
+Eduction Elémentaire au Sénégal | Marketintel
+{% endblock title %}
+
+{% block body %}
+	<div class="container-fluid">
+		{% include "commun/header.html" %}
+	</div>
+
+	<div class="custom">
+		<div class="container">
+			<div class="row  mb-5">
+				<div class="col-12">
+					<h1 class="text-center titre">Education Elémentaire au Sénégal</h1>
+				</div>
+			</div>
+
+			<div class="row mb-4">
+				<div class="col-12">
+					<h2 class="text-center titre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea porro, repellendus culpa doloribus natus magni, ad cupiditate fugit dicta nisi sequi id, fugiat dolor! Voluptatibus, libero sed! Necessitatibus, minus!</h2>
+				</div>
+			</div>
+
+			{% include "commun/circlebar.html" %}
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row mt-3">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<h1 class="text-center">Statistiques de l'enseignement élémentaire</h1>
+			</div>
+		</div>
+		<div class="row mt-2">
+			<div class="col-2"></div>
+			<div class="col-2"></div>
+			<div class="col-2">
+				<select class="form-control" id="changeNiveau">
+					<option value="" disabled selected>Changer niveau d'étude</option>
+					<option value="prescolaire">Préscolaire</option>
+					<option value="elementaire">Elémentaire</option>
+					<option value="moyen">Moyen</option>
+					<option value="secondaire">Secondaire</option>
+				</select>
+			</div>
+			<div class="co-lg-2 col-md-2 col-sm-12">
+				<select class="form-control" id="yearPrescolaire">
+					<option disabled selected>Changer d'année</option>
+
+					{% for annee in annees %}
+
+						{% if annee == current_year %}
+							<option selected value="{{annee}}">{{annee}}</option>
+
+						{% else %}
+							<option value="{{annee}}">{{annee}}</option>
+
+						{% endif %}
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		<div class="row mt-4 mb-4">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="card" style="height: 505px; width:100%;">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-8">
+								<h4 class="card-title">Taux brut d'admission
+									{{ current_year }}
+									<br>
+									
+							</div>
+						</div>
+
+						<div id="myChartTBA" style="height: 400px; width: 100%;"></div>
+
+						<div class="row loader" style="Visibility: hidden;">
+							<div class="col-5"></div>
+							<div class="col-1" style="margin-top: 150px;">
+								<div class="spinner-border" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="card" style="height: 505px; width:100%;">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-12">
+								<h4 class="card-title">Taux brut de scolarisation à l'élémentaire
+									{{current_year}}</h4>
+							</div>
+						</div>
+						<br>
+
+						<div id="myChartTBS" style="height: 400px; width: 100%;"></div>
+
+						<div class="row loader" style="Visibility: hidden;">
+							<div class="col-5"></div>
+							<div class="col-1" style="margin-top: 150px;">
+								<div class="spinner-border" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-4">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Effectif préscolarisé {{ current_year }}</h4>
+						<canvas id="" width="400" height="300"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		{% include "commun/footer.html" %}
+	</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.0/circle-progress.min.js"></script>
+
+	<script src="{% static 'chart/Chart.min.js' %}"></script>
+	<script src="{% static 'js/own/chartEducation.js' %}"></script>
+	<script src="{% static 'js/own/main.js' %}"></script>
+
+	<script src="{% static 'canvasjs/canvasjs.min.js' %}"></script>
+	<script src="{% static 'canvasjs/jquery.canvasjs.min.js' %}"></script>
+{% endblock %}

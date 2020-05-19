@@ -1,6 +1,6 @@
-"id","nom"
-1,"prescolaire"
-2,"elementaire"
-5,"prescolaire_grande_section"
-3,"Petite Section"
-4,"Moyenne Section"
+id;nom
+1;prescolaire
+2;elementaire
+5;prescolaire_grande_section
+3;Petite Section
+4;Moyenne Section

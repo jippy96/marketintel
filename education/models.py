@@ -31,7 +31,7 @@ class Taux_brut_admission(models.Model):
 
 class Taux_brut_scolarisation(models.Model):
 
-    region = models.CharField(max_length=30, unique=True)
+    region = models.CharField(max_length=30)
     garcon = models.FloatField()
     fille = models.FloatField()
     total = models.FloatField()
@@ -43,6 +43,11 @@ class Taux_brut_scolarisation(models.Model):
     def __str__(self):
         return self.region
 
+class Ecole(models.Model):
+    nom = models.CharField(max_length=100)
+    region = models.CharField(max_length=30)
+    typeEcole = models.CharField(max_length=20)
+    
 
 # class elementaire(models.Model):
 # 	region = models.CharField(max_length = 20, unique = True)

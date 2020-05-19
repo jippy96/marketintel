@@ -100,8 +100,46 @@ def prescolaire(request, year=datetime.datetime.now().year):
     )
 
 
-def elementaire(request):
-    return render(request, 'education/elementaire.html')
+def elementaire(request, year=datetime.datetime.now().year):
+
+    if request.is_ajax():
+
+        liste = []
+        tableau = {}
+
+        datas = Taux_brut_scolarisation.objects.filter(
+            niveau_etude=2,
+            annee=year,
+        )
+        for data in datas:
+            tableau = {
+                'region': data.region,
+                'garcon': data.garcon,
+                'fille': data.fille,
+                'total': data.total,
+                'niveau': data.niveau_etude.nom
+
+            }
+            liste.append(tableau)
+        tableau = {
+            'regions': liste
+        }
+
+        return JsonResponse(tableau)
+
+    annees = []
+    for x in range(2010, 2021, 1):
+        annees.append(x)
+        
+    context = {
+        'current_year': year,
+        'annees':annees
+    }
+    return render(request, 'education/elementaire.html', context)
+
+
+def moyen(request):
+    return render(request, 'education/moyen.html')
 
 # from .models import prescolaire, elementaire, moyen, secondaire
 
