@@ -1,1 +1,1 @@
-web: gunicorn marketintel.wsgi
+web: gunicorn marketintel.wsgi --log-file -
