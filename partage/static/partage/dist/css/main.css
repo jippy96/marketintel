@@ -1,0 +1,35 @@
+/*#somechart {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+#somechart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.percent {
+  display: inline-block;
+  line-height: 110px;
+  z-index: 2;
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}*/
+@media (min-width: 320px) and (max-width: 768px)  {
+  .hidePost {
+    display: none;
+  }
+  .btn.btn-success.btn-add {
+    position: fixed !important;
+    bottom: 0  !important;
+    right: 0  !important;
+    z-index: 2  !important;
+  }
+}
