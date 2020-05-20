@@ -27,7 +27,7 @@ SECRET_KEY = 'iwyxz#ps@-1hl#m!e1#^z)ibcd@_+qg$62_d2a=hq-0q!2y8qy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['marketintel-beta.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'marketintel',
         'USER': 'postgres',
-        'PASSWORD':'badou',
+        'PASSWORD':'toor2020',
         'HOST':'127.0.0.1',
         'PORT':'5432'
     }
